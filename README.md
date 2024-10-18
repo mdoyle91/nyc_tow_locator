@@ -2,13 +2,8 @@
 
 # NYC Tow Locator
 
-<div style="position: relative; width: 100%; padding-bottom: 56.25%;">
-<iframe
-style="position:absolute; width:100%; height:100%;"
-src="https://music-memes.getyarn.io/yarn-clip/62569103-86ca-4edc-a1b8-c1134ce64379/embed?autoplay=false&responsive=true"
-frameborder="0"
-></iframe>
-</div>
+![rihanna2](https://github.com/user-attachments/assets/91d34404-a7f2-403b-8645-a92068b1eac4)
+
 
 You work at a tow company in NYC, and your company hasn't digitized their filing system. All vehicles that your company tows are logged manually with pen and paper daily, and people finding their vehicles need to wait for attendants to sift through hard copy paper logs across multiple days until they can locate a vehicle. This is time consuming and often unpleasant as its ineffecient for the owner of the vehicle. You've paid a developer to design an application that allows your company to log vehicles that have been towed, so that when vehicle owners call you can let them know if your company towed their car or not right away, saving your company valuable labor time and getting the information to the owner much more swiftly. 
 
