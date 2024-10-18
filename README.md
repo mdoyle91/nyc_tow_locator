@@ -1,5 +1,3 @@
-5. MVP and Stretch Goals for your Projects
-
 # NYC Tow Locator
 
 ![rihanna2](https://github.com/user-attachments/assets/91d34404-a7f2-403b-8645-a92068b1eac4)
@@ -26,22 +24,23 @@ You'd love it if the owner of a vehicle could access a site and tell if your com
 ![WireFrame_TowCompany drawio](https://github.com/user-attachments/assets/cee04fe1-03f1-47e0-a338-bd05369d73a3)
 
 ## MVP
--Able to integrate the front-end and back-end. 
--Prioritize styling the app to satisfaction before integrating any stretch goals
--Full CUD functionality on the front-end for the tow company users.
+- Able to integrate the front-end and back-end. 
+- Prioritize styling the app to satisfaction before integrating any stretch goals
+- Full CUD functionality on the front-end for the tow company users.
+  
 ## Stretch Goals
--Try not to use ChatGPT to problem solve until all MVP goals are hit, instead ask peers, reference their project repos, Google, pull your hair out, etc.
--Integrate a user type feature, which restricts certain features for vehicle owners--they can only use read functionality, and not any CUD functionality. 
--Integrate an automatic delete feature, which will remove vehicles from the database after a certain time period--try to be accurate to any record-keeping compliance standards for NYC/NYS. 
-  -Bonus: Auto-delete function is location-based (i.e. condition for isLot boolean must be false for it to autodelete as the towing company will not need to track the location of vehicles not on its premises whereas a towed vehicle on a lot may still be there past an auto-delete date.). 
+- Try not to use ChatGPT to problem solve until all MVP goals are hit, instead ask peers, reference their project repos, Google, pull your hair out, etc.
+- Integrate a user type feature, which restricts certain features for vehicle owners--they can only use read functionality, and not any CUD functionality. 
+- Integrate an automatic delete feature, which will remove vehicles from the database after a certain time period--try to be accurate to any record-keeping compliance standards for NYC/NYS. 
+  - Bonus: Auto-delete function is location-based (i.e. condition for isLot boolean must be false for it to autodelete as the towing company will not need to track the location of vehicles not on its premises whereas a towed vehicle on a lot may still be there past an auto-delete date.). 
 
 ### Credits
--Possibly using city databases for cars and lots, though not sure, yet.
+- Possibly using city databases for cars and lots, though not sure, yet.
 
 ### Project Schedule
-Weekend-Full back-end setup completed. 
-Monday-Create HTML & Javascript Functions, front-end CUD functionality should be the last thing integrated into Javascript.
-Tuesday-Finish HTML & Javascript Functions during first half, move on to styling second half. 
-Wednesday-Styling, make it look impeccable, ensure it's responsive--prioritize the mobile version.
-Thursday-Stretch goals, prioritize user-type feature.
+- Weekend-Full back-end setup completed. 
+- Monday-Create HTML & Javascript Functions, front-end CUD functionality should be the last thing integrated into Javascript.
+- Tuesday-Finish HTML & Javascript Functions during first half, move on to styling second half. 
+- Wednesday-Styling, make it look impeccable, ensure it's responsive--prioritize the mobile version.
+- Thursday-Stretch goals, prioritize user-type feature.
 
