@@ -26,9 +26,10 @@ You'd love it if the owner of a vehicle could access a site and tell if your com
 ## MVP
 - Able to integrate the front-end and back-end. 
 - Prioritize styling the app to satisfaction before integrating any stretch goals
-- Full CUD functionality on the front-end for the tow company users.
+
   
 ## Stretch Goals
+- Full CUD functionality on the front-end for the tow company users.
 - Try not to use ChatGPT to problem solve until all MVP goals are hit, instead ask peers, reference their project repos, Google, pull your hair out, etc.
 - Integrate a user type feature, which restricts certain features for vehicle owners--they can only use read functionality, and not any CUD functionality. 
 - Integrate an automatic delete feature, which will remove vehicles from the database after a certain time period--try to be accurate to any record-keeping compliance standards for NYC/NYS. 
