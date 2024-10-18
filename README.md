@@ -1,14 +1,8 @@
-1. A new Github Repo with your Project's name (DO NOT NAME THE REPO PROJECT2!) with a Readme containing all of your relevant information
-
-2. An **ERD** list containing an ERD identifying the attributes of each Data Entity (one for each Model and embedded schema). The ERD also needs to diagram relationships between the Entities (1:1, 1:M or M:M)
-
-3. Wireframe designs for your front end
- 
-4. User Stories in your Readme for what you want your projects to contain
-
 5. MVP and Stretch Goals for your Projects
 
 # NYC Tow Locator
+
+https://music-memes.getyarn.io/yarn-clip/62569103-86ca-4edc-a1b8-c1134ce64379
 
 You work at a tow company in NYC, and your company hasn't digitized their filing system. All vehicles that your company tows are logged manually with pen and paper daily, and people finding their vehicles need to wait for attendants to sift through hard copy paper logs across multiple days until they can locate a vehicle. This is time consuming and often unpleasant as its ineffecient for the owner of the vehicle. You've paid a developer to design an application that allows your company to log vehicles that have been towed, so that when vehicle owners call you can let them know if your company towed their car or not right away, saving your company valuable labor time and getting the information to the owner much more swiftly. 
 
@@ -30,6 +24,7 @@ You'd love it if the owner of a vehicle could access a site and tell if your com
 ![ERD_TowCompany drawio (1)](https://github.com/user-attachments/assets/c2d9b3bb-be5c-4078-aab2-e58c0d09eb70)
 
 ## Wireframe
+![WireFrame_TowCompany drawio](https://github.com/user-attachments/assets/cee04fe1-03f1-47e0-a338-bd05369d73a3)
 
 ## MVP
 ## Stretch Goals
