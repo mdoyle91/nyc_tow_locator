@@ -19,20 +19,26 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 app.get("/", (req, res) => res.send("This is our landing page!"));
 
 app.get("/neighborhoods", neighborhoodController.getAllNeighborhoods);
-// app.get("/brands/:id", brandController.getBrandById);
-// app.post("/brands", brandController.createBrand);
-// app.put("/brands/:id", brandController.updateBrand);
-// app.get("/brands/name/:name", brandController.getByName);
+app.get("/neighborhoods/:id", neighborhoodController.getNeighborhoodById);
+app.post("/neighborhoods", neighborhoodController.createNeighborhood);
+app.put("/neighborhoods/:id", neighborhoodController.updateNeighborhood);
+app.delete("/neighborhoods/:id", neighborhoodController.deleteNeighborhood);
+app.get(
+  "/neighborhoods/neighborhood/:name",
+  neighborhoodController.getNeighborhoodByName
+);
 
 app.get("/locations", locationController.getAllLocations);
-// app.get("/products/:id", productController.getProductById);
-// app.post("/products", productController.createProduct);
-// app.put("/products/:id", productController.updateProduct);
-// app.delete("/products/:id", productController.deleteProduct);
-// app.get("/products/brand/:brandName", productController.getByBrand)
+app.get("/locations/:id", locationController.getLocationById);
+app.post("/locations", locationController.createLocation);
+app.put("/locations/:id", locationController.updateLocation);
+app.delete("/locations/:id", locationController.deleteLocation);
+app.get("/locations/address/:name", locationController.getLocationByAddress);
 
 app.get("/vehicles", vehicleController.getAllVehicles);
-// app.get("/sausages/:id", sausageController.getSausageById);
-// app.post("/sausages", sausageController.createSausage);
-// app.put("/sausages/:id", sausageController.updateSausage);
-// app.get("/sausages/name/:name", sausageController.getByName);
+app.get("/vehicles/:id", vehicleController.getVehicleById);
+app.post("/vehicles", vehicleController.createVehicle);
+app.put("/vehicle/:id", vehicleController.updateVehicle);
+app.delete("/vehicles/:id", vehicleController.deleteVehicle);
+app.get("/vehicles/plate/:name", vehicleController.getVehicleByPlate);
+app.get("/vehicles/vin/:name", vehicleController.getVehicleByVin);
