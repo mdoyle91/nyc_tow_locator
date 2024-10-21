@@ -6,10 +6,10 @@ borough: "Brooklyn"
 
 {
 address: "400 Myrtle Ave",
-neighborhood_name: clintonHill.\_id, // Refers to Clinton Hill
+neighborhood_name: clintonHill.\_id,
 zip_code: 11205,
 borough: "Brooklyn",
-isLot: false, // This is not a lot
+isLot: false,
 location_info: "Street parking near residential area"
 }
 
@@ -21,8 +21,8 @@ make: "Ford",
 model: "F-150",
 wasTowed: true,
 date_towed: "2024-09-30",
-location: myrtleAve.\_id, // Refers to the new location at 400 Myrtle Ave
-neighborhood: clintonHill.\_id, // Refers to Clinton Hill
+location: myrtleAve.\_id,
+neighborhood: clintonHill.\_id,
 reason_towed: "Overstayed meter time",
 current_fees_owed: 140,
 feesAccumulate: true,

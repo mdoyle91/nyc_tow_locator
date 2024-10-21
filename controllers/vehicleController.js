@@ -48,7 +48,7 @@ const updateVehicle = async (req, res) => {
 const deleteVehicle = async (req, res) => {
   try {
     const { id } = req.params;
-    const deleted = await Vheicle.findByIdAndDelete(id);
+    const deleted = await Vehicle.findByIdAndDelete(id);
     if (deleted) {
       return res.status(200).send("Vehicle deleted");
     }

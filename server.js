@@ -38,7 +38,7 @@ app.get("/locations/address/:name", locationController.getLocationByAddress);
 app.get("/vehicles", vehicleController.getAllVehicles);
 app.get("/vehicles/:id", vehicleController.getVehicleById);
 app.post("/vehicles", vehicleController.createVehicle);
-app.put("/vehicle/:id", vehicleController.updateVehicle);
+app.put("/vehicles/:id", vehicleController.updateVehicle);
 app.delete("/vehicles/:id", vehicleController.deleteVehicle);
 app.get("/vehicles/plate/:name", vehicleController.getVehicleByPlate);
 app.get("/vehicles/vin/:name", vehicleController.getVehicleByVin);
