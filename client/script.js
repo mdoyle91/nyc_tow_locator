@@ -5,7 +5,7 @@ const searchBar = document.querySelector(`#searchBar`);
 const plate = document.querySelector(`#plate`);
 const state = document.querySelector(`#state`);
 const dateTowed = document.querySelector(`#dateTowed`);
-const location = document.querySelector(`#location`);
+const parked = document.querySelector(`#location`);
 const neighborhood = document.querySelector(`#neighborhood`);
 const reasonTowed = document.querySelector(`#reasonTowed`);
 const currentFees = document.querySelector(`#currentFees`);
@@ -14,8 +14,34 @@ const feeFrequency = document.querySelector(`feeFrequency`);
 
 //Functions
 
-searchButton.addEventLister("click", () => {
-  const searchTerm = searchBar.value;
+searchButton.addEventListener(`click`, async () => {
+  const searchTerm = searchBar.value.trim();
+  if (searchTerm !== ``) {
+    console.log(`${searchTerm}`);
+    let response = await axios.get(
+      `http://localhost:3001/vehicles/plate/${searchTerm}`
+    );
+    let {
+      vehiclePlate,
+      vehicleState,
+      vehicleDateTowed,
+      vehicleLocation,
+      vehicleNeighborhood,
+      vehicleReasonTowed,
+      vehicleCurrentFees,
+      vehicleFeeRate,
+      vehicleFeeFrequency,
+    } = response.data;
+    plate.textContent = `Plate Number: ${vehiclePlate}`;
+    state.textContent = `State: ${vehicleState}`;
+    dateTowed.textContent = `Date Towed: ${vehicleDateTowed}`;
+    parked.textContent = `Location: ${vehicleLocation}`;
+    neighborhood.textContent = `Neighborhood: ${vehicleNeighborhood}`;
+    reasonTowed.textContent = `Reason Towed: ${vehicleReasonTowed}`;
+    currentFees.textContent = `Current Fees: $${vehicleCurrentFees}`;
+    feeRate.textContent = `Fee Rate: $${vehicleFeeRate}`;
+    feeFrequency.textContent = `Fee Frequency: ${vehicleFeeFrequency}`;
+  }
 });
 
 //In HTML I need:
