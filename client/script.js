@@ -22,25 +22,25 @@ searchButton.addEventListener(`click`, async () => {
       `http://localhost:3001/vehicles/plate/${searchTerm}`
     );
     let {
-      vehiclePlate,
-      vehicleState,
-      vehicleDateTowed,
+      license_plate,
+      plate_state,
+      date_towed,
       vehicleLocation,
       vehicleNeighborhood,
-      vehicleReasonTowed,
-      vehicleCurrentFees,
-      vehicleFeeRate,
-      vehicleFeeFrequency,
+      reason_towed,
+      current_fees_owed,
+      fee_rate,
+      fee_frequency,
     } = response.data;
-    plate.textContent = `Plate Number: ${vehiclePlate}`;
-    state.textContent = `State: ${vehicleState}`;
-    dateTowed.textContent = `Date Towed: ${vehicleDateTowed}`;
+    plate.textContent = `Plate Number: ${license_plate}`;
+    state.textContent = `State: ${plate_state}`;
+    dateTowed.textContent = `Date Towed: ${date_towed}`;
     parked.textContent = `Location: ${vehicleLocation}`;
     neighborhood.textContent = `Neighborhood: ${vehicleNeighborhood}`;
-    reasonTowed.textContent = `Reason Towed: ${vehicleReasonTowed}`;
-    currentFees.textContent = `Current Fees: $${vehicleCurrentFees}`;
-    feeRate.textContent = `Fee Rate: $${vehicleFeeRate}`;
-    feeFrequency.textContent = `Fee Frequency: ${vehicleFeeFrequency}`;
+    reasonTowed.textContent = `Reason Towed: ${reason_towed}`;
+    currentFees.textContent = `Current Fees: $${current_fees_owed}`;
+    feeRate.textContent = `Fee Rate: $${fee_rate}`;
+    feeFrequency.textContent = `Fee Frequency: ${fee_frequency}`;
   }
 });
 
