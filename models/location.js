@@ -3,7 +3,7 @@ const { Schema } = require("mongoose");
 
 const LocationSchema = new Schema({
   address: { type: String, required: true },
-  neighborhood_name: { type: Schema.Types.ObjectId, ref: "NeighborhoodSchema" },
+  neighborhood_name: { type: String, required: true },
   zip_code: { type: Number, required: true },
   borough: { type: String, required: true },
   isLot: { type: Boolean, required: true },

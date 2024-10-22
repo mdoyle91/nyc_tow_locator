@@ -15,7 +15,7 @@ const main = async () => {
   const locations = [
     {
       address: "123 Fulton St",
-      neighborhood_name: bedstuy._id, // Used ChatGPT to populate all of the data in the schemas for locations
+      neighborhood_name: bedstuy[0]._id, // Used ChatGPT to populate all of the data in the schemas for locations
       zip_code: 11216,
       borough: "Brooklyn",
       isLot: true,
@@ -23,7 +23,7 @@ const main = async () => {
     },
     {
       address: "456 Nostrand Ave",
-      neighborhood_name: bedstuy._id,
+      neighborhood_name: bedstuy[0]._id,
       zip_code: 11216,
       borough: "Brooklyn",
       isLot: false,
@@ -31,7 +31,7 @@ const main = async () => {
     },
     {
       address: "789 Bedford Ave",
-      neighborhood_name: bedstuy._id,
+      neighborhood_name: bedstuy[0]._id,
       zip_code: 11216,
       borough: "Brooklyn",
       isLot: false,
@@ -39,7 +39,7 @@ const main = async () => {
     },
     {
       address: "101 Dekalb Ave",
-      neighborhood_name: clintonHill._id,
+      neighborhood_name: clintonHill[0]._id,
       zip_code: 11238,
       borough: "Brooklyn",
       isLot: true,
@@ -47,7 +47,7 @@ const main = async () => {
     },
     {
       address: "202 Vanderbilt Ave",
-      neighborhood_name: clintonHill._id,
+      neighborhood_name: clintonHill[0]._id,
       zip_code: 11238,
       borough: "Brooklyn",
       isLot: false,
@@ -55,7 +55,7 @@ const main = async () => {
     },
     {
       address: "303 Washington Ave",
-      neighborhood_name: clintonHill._id,
+      neighborhood_name: clintonHill[0]._id,
       zip_code: 11238,
       borough: "Brooklyn",
       isLot: false,
@@ -63,7 +63,7 @@ const main = async () => {
     },
     {
       address: "111 Eastern Parkway",
-      neighborhood_name: crownHeights._id,
+      neighborhood_name: crownHeights[0]._id,
       zip_code: 11213,
       borough: "Brooklyn",
       isLot: true,
@@ -71,7 +71,7 @@ const main = async () => {
     },
     {
       address: "222 Franklin Ave",
-      neighborhood_name: crownHeights._id,
+      neighborhood_name: crownHeights[0]._id,
       zip_code: 11213,
       borough: "Brooklyn",
       isLot: false,
@@ -79,7 +79,7 @@ const main = async () => {
     },
     {
       address: "333 Nostrand Ave",
-      neighborhood_name: crownHeights._id,
+      neighborhood_name: crownHeights[0]._id,
       zip_code: 11213,
       borough: "Brooklyn",
       isLot: false,
