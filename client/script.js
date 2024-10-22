@@ -6,11 +6,11 @@ const plate = document.querySelector(`#plate`);
 const state = document.querySelector(`#state`);
 const dateTowed = document.querySelector(`#dateTowed`);
 const parked = document.querySelector(`#location`);
-const neighborhood = document.querySelector(`#neighborhood`);
+const neighborhoodTowed = document.querySelector(`#neighborhood`);
 const reasonTowed = document.querySelector(`#reasonTowed`);
 const currentFees = document.querySelector(`#currentFees`);
 const feeRate = document.querySelector(`#feeRate`);
-const feeFrequency = document.querySelector(`feeFrequency`);
+const feeFrequency = document.querySelector(`#feeFrequency`);
 
 //Functions
 
@@ -25,18 +25,26 @@ searchButton.addEventListener(`click`, async () => {
       license_plate,
       plate_state,
       date_towed,
-      vehicleLocation,
-      vehicleNeighborhood,
+      location,
+      neighborhood,
       reason_towed,
       current_fees_owed,
       fee_rate,
       fee_frequency,
     } = response.data;
+    let neighborhoodReference = await axios.get(
+      `http://localhost:3001/neighborhoods/${neighborhood}`
+    );
+    console.log(neighborhoodReference.data);
+    let locationReference = await axios.get(
+      `http://localhost:3001/locations/${location}`
+    );
+    console.log(locationReference);
     plate.textContent = `Plate Number: ${license_plate}`;
     state.textContent = `State: ${plate_state}`;
     dateTowed.textContent = `Date Towed: ${date_towed}`;
-    parked.textContent = `Location: ${vehicleLocation}`;
-    neighborhood.textContent = `Neighborhood: ${vehicleNeighborhood}`;
+    parked.textContent = `Location: ${locationReference.data.address}`;
+    neighborhoodTowed.textContent = `Neighborhood: ${neighborhoodReference.data.neighborhood_name}`;
     reasonTowed.textContent = `Reason Towed: ${reason_towed}`;
     currentFees.textContent = `Current Fees: $${current_fees_owed}`;
     feeRate.textContent = `Fee Rate: $${fee_rate}`;
