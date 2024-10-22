@@ -16,41 +16,78 @@ const feeFrequency = document.querySelector(`#feeFrequency`);
 
 searchButton.addEventListener(`click`, async () => {
   const searchTerm = searchBar.value.trim();
-  if (searchTerm !== ``) {
-    console.log(`${searchTerm}`);
+  let criteria = await axios.get(
+    `http://localhost:3001/vehicles/plate/${searchTerm}`
+  );
+
+  if (searchTerm === criteria.data.license_plate) {
     let response = await axios.get(
       `http://localhost:3001/vehicles/plate/${searchTerm}`
     );
-    let {
-      license_plate,
-      plate_state,
-      date_towed,
-      location,
-      neighborhood,
-      reason_towed,
-      current_fees_owed,
-      fee_rate,
-      fee_frequency,
-    } = response.data;
-    let neighborhoodReference = await axios.get(
-      `http://localhost:3001/neighborhoods/${neighborhood}`
-    );
-    console.log(neighborhoodReference.data);
-    let locationReference = await axios.get(
-      `http://localhost:3001/locations/${location}`
-    );
-    console.log(locationReference);
-    plate.textContent = `Plate Number: ${license_plate}`;
-    state.textContent = `State: ${plate_state}`;
-    dateTowed.textContent = `Date Towed: ${date_towed}`;
-    parked.textContent = `Location: ${locationReference.data.address}`;
-    neighborhoodTowed.textContent = `Neighborhood: ${neighborhoodReference.data.neighborhood_name}`;
-    reasonTowed.textContent = `Reason Towed: ${reason_towed}`;
-    currentFees.textContent = `Current Fees: $${current_fees_owed}`;
-    feeRate.textContent = `Fee Rate: $${fee_rate}`;
-    feeFrequency.textContent = `Fee Frequency: ${fee_frequency}`;
+    {
+      let {
+        license_plate,
+        plate_state,
+        date_towed,
+        location,
+        neighborhood,
+        reason_towed,
+        current_fees_owed,
+        fee_rate,
+        fee_frequency,
+      } = response.data;
+      let neighborhoodReference = await axios.get(
+        `http://localhost:3001/neighborhoods/${neighborhood}`
+      );
+      let locationReference = await axios.get(
+        `http://localhost:3001/locations/${location}`
+      );
+      plate.textContent = `Plate Number: ${license_plate}`;
+      state.textContent = `State: ${plate_state}`;
+      dateTowed.textContent = `Date Towed: ${date_towed}`;
+      parked.textContent = `Location: ${locationReference.data.address}`;
+      neighborhoodTowed.textContent = `Neighborhood: ${neighborhoodReference.data.neighborhood_name}`;
+      reasonTowed.textContent = `Reason Towed: ${reason_towed}`;
+      currentFees.textContent = `Current Fees: $${current_fees_owed}`;
+      feeRate.textContent = `Fee Rate: $${fee_rate}`;
+      feeFrequency.textContent = `Fee Frequency: ${fee_frequency}`;
+    }
   }
 });
+//Having difficulty trying to integrate the search via VIN into the searchbar functionality.
+// } else {
+//   let response = await axios.get(
+//     `http://localhost:3001/vehicles/vin/${searchTerm}`
+//   );
+//   {
+//     let {
+//       license_plate,
+//       plate_state,
+//       date_towed,
+//       location,
+//       neighborhood,
+//       reason_towed,
+//       current_fees_owed,
+//       fee_rate,
+//       fee_frequency,
+//     } = response.data;
+//     let neighborhoodReference = await axios.get(
+//       `http://localhost:3001/neighborhoods/${neighborhood}`
+//     );
+//     let locationReference = await axios.get(
+//       `http://localhost:3001/locations/${location}`
+//     );
+//     plate.textContent = `Plate Number: ${license_plate}`;
+//     state.textContent = `State: ${plate_state}`;
+//     dateTowed.textContent = `Date Towed: ${date_towed}`;
+//     parked.textContent = `Location: ${locationReference.data.address}`;
+//     neighborhoodTowed.textContent = `Neighborhood: ${neighborhoodReference.data.neighborhood_name}`;
+//     reasonTowed.textContent = `Reason Towed: ${reason_towed}`;
+//     currentFees.textContent = `Current Fees: $${current_fees_owed}`;
+//     feeRate.textContent = `Fee Rate: $${fee_rate}`;
+//     feeFrequency.textContent = `Fee Frequency: ${fee_frequency}`;
+//   }
+// }
 
 //In HTML I need:
 // Header, Logo, User Selection, Search Bar, Search Button, Dynamic Display Field, Update Button at bottom based on user
