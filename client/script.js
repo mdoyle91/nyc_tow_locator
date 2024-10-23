@@ -100,6 +100,8 @@ searchButton.addEventListener(`click`, async () => {
 const localHostAddress = `http://localhost:3001/vehicles`;
 const newVehicleInput = document.querySelector(`#new-vehicle input`);
 let submitButton = document.querySelector(`#submit`);
+let isEditingVehicle = false;
+let editButtonVehicleId = ``;
 
 async function getVehicles() {
   try {
@@ -120,11 +122,38 @@ async function createVehicle(data) {
       },
       body: JSON.stringify(data),
     });
-
     const result = await response.json();
     console.log("Success:", result.message);
   } catch (error) {
     console.error("Error", error);
+  }
+}
+
+async function deleteVehicle(vehicleId) {
+  try {
+    const response = await fetch(`${localhostAddress}/${vehicleId}`, {
+      method: "DELETE",
+    });
+    const result = await response.json();
+    console.log("Success:", result.message);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+async function updateVehicle(id, data) {
+  try {
+    const response = await fetch(`${localHostAddress}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    console.log("Success:", result);
+  } catch (error) {
+    console.error("Error:", error);
   }
 }
 
@@ -135,12 +164,38 @@ async function addVehicle() {
   newVehicleInput.value = "";
 }
 
+function deleteVehicleButton() {
+  const deleteVehicleButtons = document.querySelectorAll(".delete");
+
+  for (const deleteButton of deleteVehicleButtons) {
+    deleteButton.onclick = async function () {
+      const vehicleID = deleteButton.getAttribute("data-id");
+      await deleteVehicle(vehicleId);
+    };
+  }
+}
+
+function editVehicleButton() {
+  const editVehicleButtons = document.querySelectorAll(".edit");
+
+  for (const editButton of editVehicleButtons) {
+    const vehicle = editButton.parentNode.parentNode.children[0];
+
+    editButton.onclick = async function () {
+      newVehicleInput.value = vehicle.innerText;
+      submitButton.innerHTML = "Edit";
+      isEditingVehicle = true;
+
+      editButtonVehicleId = editButton.getAttribute("data-id");
+    };
+  }
+}
+
 async function displayVehicles() {
   const vehicleList = await getVehicles();
   console.log(vehicleList);
   let vehicleListContainer = document.querySelector(`#vehicles`);
 
-  // if (vehicleList.length == 0) {
   if (!vehicleList) {
     vehicleListContainer.innerHTML += `
     <div class="vehicle">
@@ -154,10 +209,10 @@ async function displayVehicles() {
         <span>${vehicle.license_plate}</span>  
         
         <div class="actions">
-          <button class="edit">
+          <button data-id=${vehicle.id} class="edit">
             <i class="fas fa-edit></i>
           </button>
-          <button class="delete">
+          <button data-id=${vehicle.id} class="delete">
           <i class="far fa-trash-alt"></i>
           </button>
         </div>
@@ -166,6 +221,8 @@ async function displayVehicles() {
       `;
     });
   }
+  deleteVehicleButton();
+  editVehicleButton();
 }
 
 submitButton.addEventListener(`click`, () => addVehicle());
