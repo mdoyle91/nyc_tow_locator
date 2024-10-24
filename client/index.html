@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="./script.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NYC Tow Locator</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-    
-        <img id=logo src=""> <!--Create logo or find image-->
-        <div class="userDropDown"> <!--Referenced drop down menu on lines 21-29 in Wurst Buy productpage.html-->
-            <li>
-                <a class="user" href="">User</a> <!--Determine what goes in the href field-->
-                <div class="dropdown-content">
-                    <li><a href="">Vehicle Owner</a></li>  <!--Determine what goes in the href field-->
-                    <li><a href="">Tow Company Employee</a></li>  <!--Determine what goes in the href field-->
-                </div>
-            </li>
+      <img
+        id="headerImg"
+        src="https://www.nyc.gov/assets/home/images/content/events/NYC-5boros.png"
+      />
     </header>
     <main>
-        <div class="searchField">
-            <input type="text" placeholder="Search" id="searchBar">
-            <button id="searchButton">Search!</button>
-        </div>
-        <div class="container1">
-            <h2 id="plate"></h2>
-            <h2 id="state"></h2>
-            <h2 id="dateTowed"></h2>
-            <h2 id="location"></h2>
-            <h2 id="neighborhood"></h2>
-            <h2 id="reasonTowed"></h2>
-            <h2 id="currentFees"></h2>
-            <h2 id="feeRate"></h2> <!--May need to make this and the next one particular.-->
-            <h2 id="feeFrequency"></h2>
-        </div>
+      <div class="searchField">
+        <input
+          type="text"
+          placeholder="Enter License Plate OR VIN..."
+          id="searchBar"
+        />
+        <button id="searchButton">Search!</button>
+      </div>
+      <div class="container1">
+        <h2 id="plate"></h2>
+        <h2 id="state"></h2>
+        <h2 id="dateTowed"></h2>
+        <h2 id="location"></h2>
+        <h2 id="neighborhood"></h2>
+        <h2 id="reasonTowed"></h2>
+        <h2 id="currentFees"></h2>
+        <h2 id="feeRate"></h2>
+        <!--May need to make this and the next one particular.-->
+        <h2 id="feeFrequency"></h2>
+      </div>
+      <div class="userDropDown">
+        <!--Referenced drop down menu on lines 21-29 in Wurst Buy productpage.html-->
+        <li>
+          <a class="user" href="">User</a>
+          <!--Determine what goes in the href field-->
+          <div class="dropdown-content">
+            <li><a href="">Vehicle Owner</a></li>
+            <!--Determine what goes in the href field-->
+            <li><a href="">Tow Company Employee</a></li>
+            <!--Determine what goes in the href field-->
+          </div>
+        </li>
         <button id="addVehicleButton">Add Vehicle</button>
-        <div id="vehicleInputContainer"></div> 
+        <div id="vehicleInputContainer"></div>
         <div id="vehicleFormContainer"></div>
-        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
