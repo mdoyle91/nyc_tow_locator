@@ -45,7 +45,6 @@ button {
   margin: 10px;
   color: rgb(10, 87, 150);
   font-family: Roboto;
-  background: rgb(208, 208, 18, 0.5);
   border-radius: 12px;
 }
 
@@ -83,12 +82,14 @@ button {
   margin: 10px;
   border-radius: 4px;
   border-color: rgb(116, 180, 232);
+  width: 200px;
 }
 
 #password {
   margin: 10px;
   border-radius: 4px;
   border-color: rgb(116, 180, 232);
+  width: 200px;
 }
 
 #loginButton {

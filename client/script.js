@@ -19,6 +19,10 @@ const vehicleFormContainer = document.querySelector(`#vehicleFormContainer`);
 searchButton.addEventListener(`click`, async () => {
   const searchTerm = searchBar.value.trim();
   console.log(`Searching for:`, searchTerm);
+  const container = document.querySelector(`.container1`); //Used ChatGPT for adding the background color with the ClickEvent as I was initially going to try to dynamically create the DIV, since I knew how to do that. Ultimately, I decided I only wanted to dynmically alter the background color, so thought to ask ChatGPT isntead, and this makes complete sense to me.
+  if (container) {
+    container.style.backgroundColor = `rgba(116, 180, 232, 0.5)`;
+  }
   try {
     //Got the suggestion to input a try from ChatGPT
     let vinResponse = await axios.get(
