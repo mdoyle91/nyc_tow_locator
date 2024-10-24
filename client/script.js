@@ -110,6 +110,10 @@ async function displayVehicleData(data) {
 // Function to create input fields for adding a vehicle
 addVehicleButton.addEventListener("click", () => {
   createVehicleInputFields();
+  const vehicleFormContainer = document.querySelector(`#vehicleFormContainer`);
+  if (vehicleFormContainer) {
+    vehicleFormContainer.style.backgroundColor = `rgba(116, 180, 232, 0.5)`;
+  }
 });
 
 // Function to dynamically create input fields for adding a vehicle

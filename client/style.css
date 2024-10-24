@@ -96,3 +96,12 @@ button {
   margin: 10px;
   width: 100px;
 }
+
+#vehicleFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  margin: 10px;
+  padding: 10px;
+}
